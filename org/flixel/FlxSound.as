@@ -144,7 +144,9 @@ package org.flixel
 				else
 				{
 					_channel = _sound.play(_position,0,_transform);
-					_channel.addEventListener(Event.SOUND_COMPLETE, looped);
+					
+					if (_channel)
+						_channel.addEventListener(Event.SOUND_COMPLETE, looped);
 				}
 			}
 			else
@@ -154,7 +156,9 @@ package org.flixel
 					if(_channel == null)
 					{
 						_channel = _sound.play(0,0,_transform);
-						_channel.addEventListener(Event.SOUND_COMPLETE, stopped);
+						
+						if (_channel)
+							_channel.addEventListener(Event.SOUND_COMPLETE, stopped);
 					}
 				}
 				else
